@@ -6,6 +6,7 @@ import akka.actor.Actor
   * Created by animesh on 6/26/17.
   */
 class LocalActor extends Actor{
+
   @throws[Exception](classOf[Exception])
   override def preStart(): Unit = {
     /*
