@@ -1,10 +1,13 @@
 package io.akka.learn
 
+
+import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
+import akka.stream.scaladsl.Source
 /**
   * Created by animesh on 6/27/17.
-  * Created by  on 6/27/17.
   */
-object BasicTransformationMain xtends App {
+object BasicTransformationMain extends App {
 
   implicit val system = ActorSystem("Sys")
   import system.dispatcher
@@ -16,8 +19,7 @@ object BasicTransformationMain xtends App {
      |when an unknown printer took a galley of type and scrambled it to make a type
      |specimen book.""".stripMargin
 
-  Source(() => text.split("\\s").iterator).
-  map(_.toUpperCase).
-  runForeach(println).
-  onComplete(_ => println("Done"))
+  Source( () => List("1","2","a","b","c").iterator ).
+    map(_.toUpperCase).
+    runForeach(println)
 }
