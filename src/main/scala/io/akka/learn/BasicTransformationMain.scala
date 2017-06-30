@@ -19,7 +19,7 @@ object BasicTransformationMain extends App {
      |when an unknown printer took a galley of type and scrambled it to make a type
      |specimen book.""".stripMargin
 
-  Source( () => List("1","2","a","b","c").iterator ).
-    map(_.toUpperCase).
-    runForeach(println)
+  //Source( () => List("1","2","a","b","c").iterator ).
+  //  map(_.toUpperCase).
+    //runForeach(println)
 }
