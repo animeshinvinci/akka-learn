@@ -18,7 +18,8 @@ libraryDependencies ++= {
     "ch.qos.logback"    %  "logback-classic" % "1.1.3",
     "com.typesafe.akka" %% "akka-testkit"    % akkaVersion   % "test",
     "com.typesafe.akka" %% "akka-remote"     % akkaVersion ,
-    "com.typesafe.akka" % "akka-cluster_2.11" % akkaVersion
+    "com.typesafe.akka" % "akka-cluster_2.11" % akkaVersion,
+    "com.typesafe.akka" % "akka-http-core-experimental_2.11" % akkaVersion
 
   )
 
