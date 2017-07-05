@@ -12,14 +12,18 @@ resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/release
 
 libraryDependencies ++= {
   val akkaVersion = "2.4.12"
+  val akkaHttpVersion = "10.0.0"
+
   Seq(
-    "com.typesafe.akka" %% "akka-actor"      % akkaVersion,
-    "com.typesafe.akka" %% "akka-slf4j"      % akkaVersion,
-    "ch.qos.logback"    %  "logback-classic" % "1.1.3",
-    "com.typesafe.akka" %% "akka-testkit"    % akkaVersion   % "test",
-    "com.typesafe.akka" %% "akka-remote"     % akkaVersion ,
-    "com.typesafe.akka" % "akka-cluster_2.11" % akkaVersion,
-    "com.typesafe.akka" % "akka-http-core-experimental_2.11" % akkaVersion
+    "com.typesafe.akka" %% "akka-actor"           % akkaVersion,
+    "com.typesafe.akka" %% "akka-slf4j"           % akkaVersion,
+    "com.typesafe.akka" %% "akka-testkit"         % akkaVersion   % "test",
+    "com.typesafe.akka" %% "akka-remote"          % akkaVersion ,
+    "com.typesafe.akka" %%"akka-cluster"          % akkaVersion,
+    "com.typesafe.akka" %% "akka-http-core"       % akkaHttpVersion,
+    "com.typesafe.akka" %% "akka-http"            % akkaHttpVersion,
+    "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion
+
 
   )
 
