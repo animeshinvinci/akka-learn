@@ -8,7 +8,7 @@ import akka.pattern.ask
 import akka.io.IO
 import akka.http.scaladsl.model.{HttpRequest, HttpResponse}
 import akka.stream.scaladsl.Flow
-import akka.stream.FlowMaterializer
+import akka.stream.ActorMaterializer
 
 /**
   * Created by animesh on 7/2/17.
@@ -18,9 +18,9 @@ import akka.stream.FlowMaterializer
 object HttpServer {
   implicit val askTimeout: Timeout = 1000.millis
 
-  def bindServer(port: Int)(handler: (HttpRequest) => HttpResponse)(implicit system: ActorSystem, materializer: FlowMßaterializer) {
+  def bindServer(port: Int)(handler: (HttpRequest) => HttpResponse)(implicit system: ActorSystem, materializer: ActorMaterializer) {
     implicit val ec = system.dispatcher
-    val bindingFuture = IO(Http) ? Http.Bind(interface = "localhost", port = port)
+    val bindingFuture = IO(Http) ? Http.ServerBinding("localhost",port)
     bindingFuture foreach {
       case Http.ServerBinding(localAddress, connectionStream) =>
         Flow(connectionStream).foreach({
