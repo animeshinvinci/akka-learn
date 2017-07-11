@@ -1,25 +1,28 @@
 package io.akka.learn
 
-import scala.concurrent.duration._
 import akka.actor.ActorSystem
-import akka.http.scaladsl.Http
-import akka.util.Timeout
-import akka.pattern.ask
-import akka.io.IO
-import akka.http.scaladsl.model.{HttpRequest, HttpResponse}
-import akka.stream.scaladsl.Flow
 import akka.stream.ActorMaterializer
+import akka.http.scaladsl.Http
+import akka.http.scaladsl.server.Directives._
 
 /**
   * Created by animesh on 7/2/17.
   */
 
-object HttpServer {
-  implicit val askTimeout: Timeout = 1000.millis
+object HttpServer extends  App{
+  implicit val actorSystem = ActorSystem("system")
+  implicit val actorMaterializer = ActorMaterializer()
+  val route =
+    pathSingleSlash {
+      get {
+        complete {
+          "Hello world"
+        }
+      }
+    }
+  Http().bindAndHandle(route,"localhost",8080)
 
-  def bindServer(port: Int)(handler: (HttpRequest) => HttpResponse)(implicit system: ActorSystem, materializer: ActorMaterializer) {
-    implicit val ec = system.dispatcher
+  println("server started at 8080")
 
-  }
 
 }
