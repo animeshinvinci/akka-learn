@@ -12,7 +12,6 @@ import akka.stream.ActorMaterializer
 
 /**
   * Created by animesh on 7/2/17.
-  * Created by animesh on 7/2/17.
   */
 
 object HttpServer {
@@ -20,15 +19,7 @@ object HttpServer {
 
   def bindServer(port: Int)(handler: (HttpRequest) => HttpResponse)(implicit system: ActorSystem, materializer: ActorMaterializer) {
     implicit val ec = system.dispatcher
-    val bindingFuture = IO(Http) ? Http.ServerBinding("localhost",port)
-    bindingFuture foreach {
-      case Http.ServerBinding(localAddress, connectionStream) =>
-        Flow(connectionStream).foreach({
-          case Http.IncomingConnection(remoteAddress, requestProducer, responseConsumer) =>
-            println("Accepted new connection from " + remoteAddress)
-            Flow(requestProducer).map(handler).produceTo(responseConsumer)
-        })
-    }
+
   }
 
 }
