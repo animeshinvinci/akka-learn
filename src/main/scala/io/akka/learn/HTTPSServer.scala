@@ -37,6 +37,7 @@ object HTTPSServer extends App {
   import system._
 
   val route: Route = Route(
+  
     path("ws") {
       getFromResource("web/index.html")
     } ~
@@ -47,6 +48,6 @@ object HTTPSServer extends App {
       } ~
       complete("ok"))
 
-  Http().bindAndHandle(route, interface = "0.0.0.0", port = 8443, connectionContext = serverContext)
+  Http().bindAndHandle(route, interface = "localhost", port = 8443, connectionContext = serverContext)
 
 }
