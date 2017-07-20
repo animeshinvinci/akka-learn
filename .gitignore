@@ -1,0 +1,28 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.gitignore
+.idea/libraries/SBT__com_typesafe_akka_akka_protobuf_2_12_2_4_12_jar.xml
+.idea/libraries/SBT__com_typesafe_akka_akka_remote_2_12_2_4_12_jar.xml
+.idea/libraries/SBT__com_typesafe_akka_akka_slf4j_2_12_2_4_12_jar.xml
+.idea/libraries/SBT__com_typesafe_akka_akka_testkit_2_12_2_4_12_jar.xml
+.idea/libraries/SBT__com_typesafe_config_1_3_0_jar.xml
+.idea/libraries/SBT__com_typesafe_ssl_config_core_2_12_0_2_1_jar.xml
+.idea/libraries/SBT__io_aeron_aeron_client_1_0_2_jar.xml
+.idea/libraries/SBT__io_aeron_aeron_driver_1_0_2_jar.xml
+.idea/libraries/SBT__io_netty_netty_3_10_6_Final_jar.xml
+.idea/libraries/SBT__org_agrona_Agrona_0_5_5_jar.xml
+.idea/libraries/SBT__org_reactivestreams_reactive_streams_1_0_0_jar.xml
+.idea/libraries/SBT__org_scala_lang_modules_scala_java8_compat_2_12_0_8_0_jar.xml
+.idea/libraries/SBT__org_scala_lang_modules_scala_parser_combinators_2_12_1_0_4_jar.xml
+.idea/libraries/SBT__org_scala_lang_scala_library_2_12_1_jar.xml
+.idea/libraries/SBT__org_slf4j_slf4j_api_1_7_16_jar.xml
+.idea/libraries/SBT__org_uncommons_maths_uncommons_maths_1_2_2a_jar.xml
+project/target/
+target/

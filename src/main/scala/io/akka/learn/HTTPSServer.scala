@@ -37,7 +37,7 @@ object HTTPSServer extends App {
   import system._
 
   val route: Route = Route(
-  
+
     path("ws") {
       getFromResource("web/index.html")
     } ~
